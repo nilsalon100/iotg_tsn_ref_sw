@@ -23,7 +23,7 @@ opcua_server_SOURCES=src/opcua-tsn/multicallback_server.c   \
 			src/opcua-tsn/opcua_datasource.c\
 			src/opcua-tsn/opcua_publish.c	\
 			src/opcua-tsn/opcua_subscribe.c
-txrx_tsn_LDADD = $(libbpf_LIBS) $(libelf_LIBS) -lpthread
+txrx_tsn_LDADD = $(libbpf_LIBS) $(libelf_LIBS) -lpthread -lxdp
 opcua_server_LDADD = $(open62451_LIBS) $(libjson_LIBS) $(libbpf_LIBS) $(libelf_LIBS) -lpthread
 
 AM_CPPFLAGS = -O2 -g -fstack-protector-strong -fPIE -fPIC -D_FORTIFY_SOURCE=2 \
