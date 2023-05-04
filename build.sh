@@ -59,7 +59,7 @@ echo -e "\nBUILD.SH: Checking for Bash shell"
 if [ "$os_distro" == "\"Ubuntu"\" ]; then
 	bash_shell=$(ls -la /usr/bin | grep -i 'bash' > /dev/null && echo 0 || echo 1)
 else
-	bash_shell=$(ls -la /bin/sh | grep -i 'bash' > /dev/null && echo 0 || echo 1)
+	bash_shell=$(ls -la /usr/bin | grep -i 'bash' > /dev/null && echo 0 || echo 1)
 fi
 
 if [ $bash_shell = 0 ]; then
