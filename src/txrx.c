@@ -200,9 +200,9 @@ static error_t parser(int key, char *arg, struct argp_state *state)
 			exit_with_error("Invalid queue number/socket priority. Check --help");
 		opt->socket_prio = (uint32_t)res;
 		printf("\n%d\n", opt->socket_prio);
-		//#ifdef WITH_XDP
-		//opt->x_opt.queue = opt->socket_prio;
-		//#endif
+#ifdef WITH_XDP
+		exit_with_error("AF_XDP does not support setting socket priority.");
+#endif
 		//opt->vlan_prio = opt->socket_prio * 32;
 		break;
 	case 'X':
