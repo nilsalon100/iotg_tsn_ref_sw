@@ -35,7 +35,7 @@
 
 #include <stdio.h>
 #ifdef WITH_XDP
-#include <bpf/xsk.h>
+#include <xdp/xsk.h>
 #endif
 #include <time.h>
 #include <string.h>
