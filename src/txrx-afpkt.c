@@ -557,7 +557,8 @@ int afpkt_recv_pkt(int sock, struct user_opt *opt)
 		rx_timestampC = 0;
 
 	/* Do simple checks and filtering */
-	if (payload->tx_queue > 8 || payload->seq > (50 * 1000 * 1000)) {
+	//set 8 to 15
+	if (payload->tx_queue > 15 || payload->seq > (50 * 1000 * 1000)) {
 		if (verbose)
 			fprintf(stderr, "Warn: Skipping invalid packet\n");
 		return -1;

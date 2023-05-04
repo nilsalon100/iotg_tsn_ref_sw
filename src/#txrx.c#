@@ -193,7 +193,7 @@ static error_t parser(int key, char *arg, struct argp_state *state)
 #endif
 		opt->vlan_prio = opt->socket_prio * 32;
 		break;
-	case 'g':
+	case 'g'cd:
 		len = strlen(arg);
 		res = strtol((const char *)arg, &str_end, 10);
 		if (errno || res < 0 || res >= 15 || str_end != &arg[len])
